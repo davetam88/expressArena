@@ -1,9 +1,16 @@
 const express = require("express");
+const morgan = require("morgan");
 
 // app object
 const app = express();
 
+// app.use(morgan("dev"));
+// app.use(morgan("common"));
+app.use(morgan("tiny"));
+
+//	http://localhost:8000
 app.get("/", (req, res) => {
+  console.log("The root path was called");
   res.send("Hello Express!");
 });
 
